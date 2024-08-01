@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tunes Note</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-green-300 transition-colors duration-500">
+    <div class="player h-[95vh] flex items-center flex-col justify-center">
+        <div class="details flex items-center flex-col justify-center mt-6">
+            <div class="now-playing text-base">PLAYING x OF y</div>
+            <div class="track-art bg-cover bg-center rounded-[15%] h-[250px] w-[250px] my-6" style="background-image: url('https://images.pexels.com/photos/262034/pexels-photo-262034.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');"></div>
+            <div class="track-name text-3xl">Track Name</div>
+            <div class="track-artist text-xl">Track Artist</div>
+        </div>
+        <div class="buttons flex items-center">
+            <div class="prev-track p-6 opacity-80 hover:opacity-100 transition-opacity duration-200 cursor-pointer" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
+            <div class="playpause-track p-6 opacity-80 hover:opacity-100 transition-opacity duration-200 cursor-pointer" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x"></i></div>
+            <div class="next-track p-6 opacity-80 hover:opacity-100 transition-opacity duration-200 cursor-pointer" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
+        </div>
+        <div class="slider_container flex justify-center items-center w-[75%] max-w-[400px]">
+            <div class="current-time p-2">00:00</div>
+            <input type="range" min="1" max="100" value="0" class="seek_slider w-[60%] appearance-none h-[5px] bg-black opacity-70 transition-opacity duration-200 hover:opacity-100" onchange="seekTo()">
+            <div class="total-duration p-2">00:00</div>
+        </div>
+        <div class="slider_container flex justify-center items-center w-[75%] max-w-[400px] mt-4">
+            <i class="fa fa-volume-down p-2"></i>
+            <input type="range" min="1" max="100" value="99" class="volume_slider w-[30%] appearance-none h-[5px] bg-black opacity-70 transition-opacity duration-200 hover:opacity-100" onchange="setVolume()">
+            <i class="fa fa-volume-up p-2"></i>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+   
